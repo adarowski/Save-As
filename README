@@ -1,0 +1,9 @@
+Save As is a very basic HTML5 WordPress theme extracted from the PatientsLikeMe Tech Blog custom theme. Really, no frills here. Just basic, semantic HTML5 markup with pretty much no styling at all.
+
+It uses a lot of the HTML5 tags you'd expect: <header> (with <hgroup>!) for the blog title and tagline, <footer> for the footer, <aside> for the sidebar (though I used an aside with the ID "sidebar" so that you can use asides in your individual posts, too), <time> for proper post time-stamping, section for the main parts of the page (like the main posts area or the comment form), <article> for individual posts, and even <mark> for highlighting search matches (in titles only, for now) on your search results page.
+
+Blog post here: http://tech.patientslikeme.com/2010/11/24/save-as-a-basic-html5-wordpress-template/
+
+The PatientsLikeMe Tech Blog WordPress theme was originally built by Adam Darowski and Cris Necochea of PatientsLikeMe.
+
+This theme is free for you do whatever you please with. Go nuts.
