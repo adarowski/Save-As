@@ -8,6 +8,7 @@ Author URI: http://patientslikeme.com/
 Tags: html5
 */
 
+* { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
 
 body {
   background-color: #FFF;
@@ -35,9 +36,8 @@ section#posts { float: left; width: 65%; }
 aside#sidebar { float: right; width: 30%; }
 footer { clear: both; }
 
-hr { 
-border-color: #666;
-color: #666;
-background-color: #666;
-height: 1px;
- }
+hr { border-color: #666; color: #666; background-color: #666; height: 1px; }
+
+#commentform legend { font-weight: bold; padding: 0; }
+#commentform fieldset { border: none; padding: 0; margin-bottom: 20px; }
+#commentform label, #commentform input[type=text], #commentform textarea { width: 100%; }

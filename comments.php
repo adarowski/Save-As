@@ -56,7 +56,6 @@ On <?php comment_date('F jS, Y') ?> at <?php comment_time() ?> <cite><?php comme
 
 <?php if ('open' == $post->comment_status) : ?>
 
-<h3 id="respond">Leave a Comment</h3>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to post a comment.</p>
@@ -64,28 +63,42 @@ On <?php comment_date('F jS, Y') ?> at <?php comment_time() ?> <cite><?php comme
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
+<fieldset>
+  <legend>Leave a Comment</legend>
+</fieldset>
+
 <?php if ( $user_ID ) : ?>
 
 <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></p>
 
 <?php else : ?>
 
-<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-<label for="author">Name <?php if ($req) echo "(required)"; ?></label></p>
+<fieldset>
+  <label for="author">Your name <?php if ($req) echo "(required)"; ?></label>
+  <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" placeholder="Your name <?php if ($req) echo "(required)"; ?>" tabindex="1" />
+</fieldset>
 
-<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-<label for="email">Mail (will not be published) <?php if ($req) echo "(required)"; ?></label></p>
+<fieldset>
+  <label for="email">Mail (<?php if ($req) echo "required, but "; ?>will not be published)</label>
+  <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" placeholder="Mail (<?php if ($req) echo "required, but "; ?>will not be published)" tabindex="2" />
+</fieldset>
 
-<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url">Website</label></p>
+<fieldset>
+  <label for="url">Website (optional)</label>
+  <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" placeholder="Website (optional)" tabindex="3" />
+</fieldset>
 
 <?php endif; ?>
 
-<p><textarea name="comment" id="comment" rows="10" tabindex="4"></textarea></p>
+<fieldset>
+  <label for "comment">Your comment</label>
+  <textarea name="comment" id="comment" rows="10" tabindex="4"></textarea>
+</fieldset>
 
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-</p>
+<fieldset>
+  <input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+  <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
+</fieldset>
 
 <?php do_action('comment_form', $post->ID); ?>
 
