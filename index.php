@@ -11,7 +11,7 @@
         <h2><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
         <ul class="postmetadata">
           <li class="comments"><?php comments_popup_link('<span>0</span> Comments', '<span>1</span> Comment', '<span>%</span> Comments'); ?></li>
-          <li>Posted <time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('F jS, Y') ?></time> by <?php the_author_posts_link(); ?></li>
+          <li>Posted <?php the_time('F jS, Y') ?> by <?php the_author_posts_link(); ?></li>
           <li>Filed Under: <?php the_category(', ') ?></li>
           <li>Tags: <?php the_tags('',', ','') ?></li>
         </ul>
