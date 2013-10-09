@@ -18,10 +18,8 @@
 <body>
 
 <header>
-  <hgroup>
-    <h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1>
-    <h2><?php bloginfo('description'); ?></h2>
-  </hgroup>
+  <h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1>
+  <h2><?php bloginfo('description'); ?></h2>
 </header>
 
 <hr />
